@@ -54,7 +54,7 @@ This bundle is being served only from private repository therefore it is require
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/easir/error-normalizer-bundle.git"
+            "url": "git@github.com:easir/error-normalizer-bundle.git"
         }
     ]
 }
