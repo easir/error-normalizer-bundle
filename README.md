@@ -1,6 +1,7 @@
 # Unified Error Normalizer Bundle
 
-Symfony bundle which provides Unified Error Normalizer allowing to easily normalize/denormalize `ConstraintViolationList` from Symfony's Validator component.
+Symfony bundle which provides Unified Error Normalizer allowing to easily 
+normalize/denormalize `ConstraintViolationList` from Symfony's Validator component.
 
 ## Status
 
@@ -17,7 +18,8 @@ Normalization example:
 
 ```php
 use Easir\ErrorNormalizerBundle\NameConverter\FieldNameConverter;
-use Easir\ErrorNormalizerBundle\Normalizer\UnifiedConstraintViolationListNormalizer;use Symfony\Component\Validator\ConstraintViolation;use Symfony\Component\Validator\ConstraintViolationList;
+use Easir\ErrorNormalizerBundle\Normalizer\UnifiedConstraintViolationListNormalizer;
+use Symfony\Component\Validator\ConstraintViolationList;
 
 $normalizer = new UnifiedConstraintViolationListNormalizer(new FieldNameConverter());
 
@@ -26,10 +28,10 @@ $constraintViolationList = $validator->validate($data);
 $errors = $this->normalizer->normalize($data, ConstraintViolationList::class);
 ```
 
-Normalization process will return an array with like:
+Normalization process will return an array in format like below:
 
 ```php
-$data = [
+$errors = [
     'errors' => [
         [
             'message' => 'Error message here',
@@ -46,15 +48,15 @@ $data = [
 
 ## Installation
 
-This bundle is being served only from private repository therefore it is required to add proper repository into your `composer.json` file.
+This bundle is being served only from private repository therefore it is required 
+to add proper repository into your `composer.json` file.
 
 ```json
-
 {
     "repositories": [
         {
             "type": "vcs",
-            "url": "git@github.com:easir/error-normalizer-bundle.git"
+            "url": "https://github.com/easir/error-normalizer-bundle.git"
         }
     ]
 }
@@ -74,7 +76,8 @@ Install all the needed packages required to develop the project:
 composer install
 ```
 
-> *Note!* This bundle is developed against different versions of Symfony, please remember to run the tests with lowest dependencies.
+> *Note!* This bundle is developed against different versions of Symfony, 
+> please remember to run the tests with lowest dependencies.
 > You can easily achieve that by running dependency installation with `--prefer-lowest`.
 
 ### Testing
@@ -87,7 +90,10 @@ vendor/bin/phpunit
 
 ### Code Style
 
-This bundle enforces the Easir code standards during development using the [PHP CS Fixer](https://cs.sensiolabs.org/) utility. Before committing any code, you can run the utility so it can fix any potential rule violations for you:
+This bundle enforces the [Easir Code Standards](https://github.com/easir/coding-standard) 
+during development using the [PHP CS Fixer](https://cs.sensiolabs.org/) utility. 
+Before committing any code, you can run the utility so it can fix any potential rule 
+violations for you:
 
 ```sh
 vendor/bin/phpcs
@@ -95,7 +101,8 @@ vendor/bin/phpcs
 
 ## Reporting issues
 
-Use the [issue tracker](https://github.com/easir/error-normalizer-bundle/issues) to report any issues you might have.
+Use the [issue tracker](https://github.com/easir/error-normalizer-bundle/issues) 
+to report any issues you might have.
 
 ## License
 
