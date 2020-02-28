@@ -11,7 +11,7 @@ class FieldNameConverter implements NameConverterInterface
      */
     public function normalize($propertyName)
     {
-        return \strtr($propertyName, ['[' => '', ']' => '']);
+        return \trim(\str_replace('][', '.', $propertyName), '[]');
     }
 
     /**
@@ -21,7 +21,7 @@ class FieldNameConverter implements NameConverterInterface
     {
         return \sprintf(
             '[%s]',
-            \implode('].[', \explode('.', $propertyName))
+            \implode('][', \explode('.', $propertyName))
         );
     }
 }

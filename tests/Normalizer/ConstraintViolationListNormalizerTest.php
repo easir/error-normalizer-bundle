@@ -42,7 +42,7 @@ class ConstraintViolationListNormalizerTest extends TestCase
                 null,
                 [],
                 [],
-                '[b].[c]',
+                '[b][c]',
                 null,
                 null,
                 $code
@@ -89,7 +89,7 @@ class ConstraintViolationListNormalizerTest extends TestCase
                 'b',
                 ['value' => 'foo'],
                 'c',
-                '[d].[e]',
+                '[d][e]',
                 'f',
                 null,
                 $code
