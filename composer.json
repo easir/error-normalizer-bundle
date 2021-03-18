@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "php": "^7.2|^8.0.0",
+        "php": "^7.2|^8.0",
         "symfony/serializer": "^4.4 || ^5.0",
         "symfony/validator": "^4.4 || ^5.0",
         "symfony/framework-bundle": "^4.4 || ^5.0"
